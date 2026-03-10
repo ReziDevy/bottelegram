@@ -1,9 +1,10 @@
+import os
 import requests
 from telegram import Update, LinkPreviewOptions
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-TOKEN = "8668793116:AAHue4Q9-9Ft77NUoOiFeWzCuSozyLZQ4ME"
-CANAL = -1003783056659
+TOKEN = os.environ.get("TOKEN")
+CANAL = int(os.environ.get("CANAL"))
 
 def encurtar_link(url):
     if "amzn.to" in url or "meli.la" in url or "tinyurl.com" in url:
